@@ -22,7 +22,7 @@ end
 -- Function to find an object in the workspace or player's backpack
 function module:xray()
       --  if Settings.AutoStartQuest then
-            if QuestSelected == "1 [Level 0]" then wait(0.5)
+            if QuestSelected == "1 [Level 0]" then
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",1}})
             elseif QuestSelected == "2 [Level 10]" then
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",2}})
