@@ -1,0 +1,123 @@
+local module = {}
+
+
+
+-- Function to find an object in the workspace or player's backpack
+local function findObject(name)
+	for _, child in ipairs(game.Workspace:GetDescendants()) do
+		if child.Name == name then
+			return child.Parent, "Workspace"
+		end
+	end
+	for _, player in ipairs(game.Players:GetPlayers()) do
+		for _, item in ipairs(player.Backpack:GetChildren()) do
+			if item.Name == name then
+				return item.Parent.Parent, "Players"
+			end
+		end
+	end
+	return nil
+end
+
+-- Function to find an object in the workspace or player's backpack
+function module:xray()
+      --  if Settings.AutoStartQuest then
+            if QuestSelected == "1 [Level 0]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",1}})
+            elseif QuestSelected == "2 [Level 10]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",2}})
+            elseif QuestSelected == "3 [Level 20]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",3}})
+            elseif QuestSelected == "4 [Level 35]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",4}})
+            elseif QuestSelected == "5 [Level 50]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",5}})
+            elseif QuestSelected == "6 [Level 60]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",6}})
+            elseif QuestSelected == "7 [Level 75]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",7}})
+            elseif QuestSelected == "8 [Level 90]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",8}})
+            elseif QuestSelected == "9 [Level 100]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",9}})
+            elseif QuestSelected == "10 [Level 120]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",10}})
+            elseif QuestSelected == "11 [Level 135]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",11}})
+            elseif QuestSelected == "12 [Level 150]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",12}})
+            elseif QuestSelected == "13 [Level 170]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",13}})
+            elseif QuestSelected == "14 [Level 185]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",14}})
+            elseif QuestSelected == "15 [Level 200]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",15}})
+            elseif QuestSelected == "16 [Level 215]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",16}})
+            elseif QuestSelected == "17 [Level 230]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",17}})
+            elseif QuestSelected == "18 [Level 250]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",18}})
+            elseif QuestSelected == "19 [Level 275]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",19}})
+            elseif QuestSelected == "20 [Level 305]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",20}})
+            elseif QuestSelected == "21 [Level 330]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",21}})
+            elseif QuestSelected == "22 [Level 350]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",22}})
+            elseif QuestSelected == "23 [Level 380]" then
+                game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",23}})
+            end
+    --    end
+end
+
+
+
+local questCoords = {
+    ["1 [Level 0]"] = Vector3.new(3475.2, 144.373, 1881.89),
+    ["2 [Level 10]"] = Vector3.new(3544, 149.472, 2199.56),
+    ["3 [Level 20]"] = Vector3.new(3426.65, 146.461, 2366.03),
+    ["4 [Level 35]"] = Vector3.new(1815.31, 140.601, 549.418),
+    ["5 [Level 50]"] = Vector3.new(1687.64, 139.597, 685.782),
+    ["6 [Level 60]"] = Vector3.new(1620.26, 141.467, 884.986),
+    ["7 [Level 75]"] = Vector3.new(2962.04, 146.118, -644.435),
+    ["8 [Level 90]"] = Vector3.new(2960.18, 166.821, -667.359),
+    ["9 [Level 100]"] = Vector3.new(3052.77, 146.057, -632.053),
+    ["10 [Level 120]"] = Vector3.new(4944.9, 141.959, 168.555),
+    ["11 [Level 135]"] = Vector3.new(5316.66, 142.756, 142.096),
+    ["12 [Level 150]"] = Vector3.new(5438.38, 323.853, -47.9558),
+    ["13 [Level 170]"] = Vector3.new(5734.63, 191.985, 2193.21),
+    ["14 [Level 185]"] = Vector3.new(5644.32, 182.105, 2381.23),
+    ["15 [Level 200]"] = Vector3.new(5814.58, 184.56, 2463.27),
+    ["16 [Level 215]"] = Vector3.new(1363.51, 127.042, 2699.96),
+    ["17 [Level 230]"] = Vector3.new(1336.55, 127.167, 2673.5),
+    ["18 [Level 250]"] = Vector3.new(1388.33, 127.181, 2671.42),
+    ["19 [Level 275]"] = Vector3.new(-580.926, 147.454, 580.688),
+    ["20 [Level 305]"] = Vector3.new(-1221.38, 158.521, 244.48),
+    ["21 [Level 330]"] = Vector3.new(-1008.66, 155.487, 21.2051),
+    ["22 [Level 350]"] = Vector3.new(-1049.83, 155.487, -117.031),
+}
+
+
+function module:xrayy()
+     while true do
+        task.wait()
+        if Settings.AutoStartQuest then
+            local progress = game.Players.UnicornBubblesz_3.PlayerGui.Quests.CurrentQuestContainer.QuestProgressMain.Visible
+            local progressText = c.Text
+            if questCoords[QuestSelected] and (progressText == "30/960" or progressText == "1/1" or progressText == "2/2" or progressText == "3/3" or progressText == "4/4" or progressText == "5/5" or progressText == "6/6" or progressText == "7/7" or progressText == "8/8") and progress == true then
+local target = questCoords[QuestSelected]
+local success, err = pcall(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(target)
+end)
+if not success then
+warn(err)
+end
+end
+end
+end
+end
+
+
+return module
