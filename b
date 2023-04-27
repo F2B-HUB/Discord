@@ -126,7 +126,7 @@ function module:xrayy()
                 elseif QuestSelected == "23 [Level 380]" then
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-839.468, 148.393, 464.856) 
                 end
-                wait(2)
+              --  wait(2)
             end
 end
 
