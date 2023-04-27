@@ -2,7 +2,7 @@ local module = {}
 
 -- Function to find an object in the workspace or player's backpack
 local function AutoStartQuest()
-        if Settings.AutoStartQuest then
+      --  if Settings.AutoStartQuest then
             if QuestSelected == "1 [Level 0]" then 
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",1}})
             elseif QuestSelected == "2 [Level 10]" then
@@ -50,7 +50,7 @@ local function AutoStartQuest()
             elseif QuestSelected == "23 [Level 380]" then
                 game:GetService("ReplicatedStorage").RemoteEvent:FireServer({{utf8.char(3),"GetQuest",23}})
             end
-        end
+    --    end
 end
 
 
